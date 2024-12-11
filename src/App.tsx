@@ -176,11 +176,11 @@ function App() {
       ],
     },
   };
-  console.log('man6', man6.name);
-  console.log('man6', man6.mother.name);
-  console.log('man6', man6.mother.work.experience);
-  console.log('man6', man6.mother.parents[0].age);
-  console.log('man6', man6.mother.parents[0].favoriteDish.title);
+  // console.log('man6', man6.name);
+  // console.log('man6', man6.mother.name);
+  // console.log('man6', man6.mother.work.experience);
+  // console.log('man6', man6.mother.parents[0].age);
+  // console.log('man6', man6.mother.parents[0].favoriteDish.title);
   const man6FullCopy = {
     ...man6,
     mother: {
@@ -197,14 +197,14 @@ function App() {
   man6FullCopy.mother.work.experience = 333;
   man6FullCopy.mother.parents[0].age = 444;
   man6FullCopy.mother.parents[0].favoriteDish.title = 'Pasta!';
-  console.log('man6', man6FullCopy.name);
-  console.log('man6', man6FullCopy.mother.name);
-  console.log('man6', man6FullCopy.mother.work.experience);
-  console.log('man6', man6FullCopy.mother.parents[0].age);
-  console.log('man6', man6FullCopy.mother.parents[0].favoriteDish.title);
+  // console.log('man6', man6FullCopy.name);
+  // console.log('man6', man6FullCopy.mother.name);
+  // console.log('man6', man6FullCopy.mother.work.experience);
+  // console.log('man6', man6FullCopy.mother.parents[0].age);
+  // console.log('man6', man6FullCopy.mother.parents[0].favoriteDish.title);
 
   //10 Array of objects inside an object -> object -> array -> object ->  object
-  let man7 = {
+  const man7 = {
     name: 'John',
     age: 28,
     mother: {
@@ -241,8 +241,43 @@ function App() {
       ],
     },
   };
+  // console.log('man7', man7.name);
+  // console.log('man7', man7.mother.name);
+  // console.log('man7', man7.mother.work.experience);
+  // console.log('man7', man7.mother.parents[0].age);
+  // console.log('man7', man7.mother.parents[0].favoriteDish.title);
+  // console.log('man7', man7.mother.parents[0].favoriteDish.ingredients[0].title);
+  const man7FullCopy = {
+    ...man7,
+    mother: {
+      ...man7.mother,
+      work: { ...man7.mother.work },
+      parents: man7.mother.parents.map(el => ({
+        ...el,
+        favoriteDish: {
+          ...el.favoriteDish,
+          ingredients: el.favoriteDish.ingredients.map(el => ({ ...el })),
+        },
+      })),
+    },
+  };
+  man7FullCopy.name = 'Bob';
+  man7FullCopy.mother.name = 'Lisa';
+  man7FullCopy.mother.work.experience = 333;
+  man7FullCopy.mother.parents[0].age = 545;
+  man7FullCopy.mother.parents[0].favoriteDish.title = 'Pasta!!';
+  man7FullCopy.mother.parents[0].favoriteDish.ingredients[0].title =
+    'Potatoes!!';
 
-  let man7FullCopy; //  your code
+  // console.log('man7', man7FullCopy.name);
+  // console.log('man7', man7FullCopy.mother.name);
+  // console.log('man7', man7FullCopy.mother.work.experience);
+  // console.log('man7', man7FullCopy.mother.parents[0].age);
+  // console.log('man7', man7FullCopy.mother.parents[0].favoriteDish.title);
+  // console.log(
+  //   'man7',
+  //   man7FullCopy.mother.parents[0].favoriteDish.ingredients[0].title
+  // );
 
   return (
     <>
