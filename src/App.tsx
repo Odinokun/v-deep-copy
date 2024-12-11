@@ -41,22 +41,24 @@ function App() {
     age: 28,
     friends: ['Peter', 'Steven', 'William'],
   };
-  console.log('man2', man2.name);
-  console.log('man2', man2.friends[2]);
+  // console.log('man2', man2.name);
+  // console.log('man2', man2.friends[2]);
   const man2FullCopy = { ...man2, friends: [...man2.friends] };
   man2FullCopy.name = 'Axe';
   man2FullCopy.friends[2] = 'Dima';
-  console.log('man2FullCopy', man2FullCopy.name);
-  console.log('man2FullCopy', man2FullCopy.friends[2]);
+  // console.log('man2FullCopy', man2FullCopy.name);
+  // console.log('man2FullCopy', man2FullCopy.friends[2]);
 
   // 5 Array of objects
-  let people = [
+  const people = [
     { name: 'Peter', age: 30 },
     { name: 'Steven', age: 32 },
     { name: 'William', age: 28 },
   ];
-
-  let peopleFullCopy; // your code
+  console.log('people', people[0]);
+  const peopleFullCopy = people.map(el => ({ ...el }));
+  peopleFullCopy[0].age = 100;
+  console.log('peopleFullCopy', peopleFullCopy[0]);
 
   // 6 Array of objects inside object
   let man3 = {
