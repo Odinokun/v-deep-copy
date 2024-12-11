@@ -142,7 +142,6 @@ function App() {
   man5FullCopy.mother.name = 'Lisa';
   man5FullCopy.mother.work.experience = 40;
   man5FullCopy.mother.parents[0].age = 180;
-
   console.log('man5', man5FullCopy.name);
   console.log('man5', man5FullCopy.mother.name);
   console.log('man5', man5FullCopy.mother.work.experience);
