@@ -55,13 +55,13 @@ function App() {
     { name: 'Steven', age: 32 },
     { name: 'William', age: 28 },
   ];
-  console.log('people', people[0]);
+  // console.log('people', people[0]);
   const peopleFullCopy = people.map(el => ({ ...el }));
-  peopleFullCopy[0].age = 100;
-  console.log('peopleFullCopy', peopleFullCopy[0]);
+  // peopleFullCopy[0].age = 100;
+  // console.log('peopleFullCopy', peopleFullCopy[0]);
 
   // 6 Array of objects inside object
-  let man3 = {
+  const man3 = {
     name: 'John',
     age: 28,
     friends: [
@@ -70,8 +70,16 @@ function App() {
       { name: 'William', age: 28 },
     ],
   };
-
-  let man3FullCopy; //  your code
+  console.log('man3', man3.age);
+  console.log('man3', man3.friends[0]);
+  const man3FullCopy = {
+    ...man3,
+    friends: man3.friends.map(el => ({ ...el })),
+  };
+  man3FullCopy.age = 200;
+  man3FullCopy.friends[0].name = 'Fred';
+  console.log('man3FullCopy', man3FullCopy.age);
+  console.log('man3FullCopy', man3FullCopy.friends[0]);
 
   // 7 Object inside an object, inside an object
   let man4 = {
