@@ -13,13 +13,13 @@ function App() {
 
   // 2. Array of primitives
   const numbers = [1, 2, 3];
-  console.log('numbers', numbers[2]);
+  // console.log('numbers', numbers[2]);
   const numbersFullCopy = [...numbers];
   numbersFullCopy[2] = 88;
-  console.log('numbersFullCopy', numbersFullCopy[2]);
+  // console.log('numbersFullCopy', numbersFullCopy[2]);
 
   // 3. Object inside an object
-  let man1 = {
+  const man1 = {
     name: 'John',
     age: 28,
     mother: {
@@ -27,8 +27,13 @@ function App() {
       age: 50,
     },
   };
-
-  let man1FullCopy; // your code
+  console.log('man1', man1.name);
+  console.log('man1', man1.mother.age);
+  const man1FullCopy = { ...man1, mother: { ...man1.mother } };
+  man1FullCopy.name = 'Bob';
+  man1FullCopy.mother.age = 100;
+  console.log('man1FullCopy', man1FullCopy.name);
+  console.log('man1FullCopy', man1FullCopy.mother.age);
 
   // 4. Array of primitives inside an object
   let man2 = {
