@@ -6,14 +6,17 @@ function App() {
     name: 'John',
     age: 28,
   };
-  console.log('man', man.age);
-  const manFullCopy = { ...man }; // your code
-  console.log('manFullCopy', manFullCopy.age);
+  // console.log('man', man.age);
+  const manFullCopy = { ...man };
+  manFullCopy.age = 111;
+  // console.log('manFullCopy', manFullCopy.age);
 
   // 2. Array of primitives
-  let numbers = [1, 2, 3];
-
-  let numbersFullCopy; //  your code
+  const numbers = [1, 2, 3];
+  console.log('numbers', numbers[2]);
+  const numbersFullCopy = [...numbers];
+  numbersFullCopy[2] = 88;
+  console.log('numbersFullCopy', numbersFullCopy[2]);
 
   // 3. Object inside an object
   let man1 = {
