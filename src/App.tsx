@@ -27,22 +27,27 @@ function App() {
       age: 50,
     },
   };
-  console.log('man1', man1.name);
-  console.log('man1', man1.mother.age);
+  // console.log('man1', man1.name);
+  // console.log('man1', man1.mother.age);
   const man1FullCopy = { ...man1, mother: { ...man1.mother } };
   man1FullCopy.name = 'Bob';
   man1FullCopy.mother.age = 100;
-  console.log('man1FullCopy', man1FullCopy.name);
-  console.log('man1FullCopy', man1FullCopy.mother.age);
+  // console.log('man1FullCopy', man1FullCopy.name);
+  // console.log('man1FullCopy', man1FullCopy.mother.age);
 
   // 4. Array of primitives inside an object
-  let man2 = {
+  const man2 = {
     name: 'John',
     age: 28,
     friends: ['Peter', 'Steven', 'William'],
   };
-
-  let man2FullCopy; // your code
+  console.log('man2', man2.name);
+  console.log('man2', man2.friends[2]);
+  const man2FullCopy = { ...man2, friends: [...man2.friends] };
+  man2FullCopy.name = 'Axe';
+  man2FullCopy.friends[2] = 'Dima';
+  console.log('man2FullCopy', man2FullCopy.name);
+  console.log('man2FullCopy', man2FullCopy.friends[2]);
 
   // 5 Array of objects
   let people = [
