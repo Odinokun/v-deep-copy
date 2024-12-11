@@ -125,10 +125,10 @@ function App() {
       ],
     },
   };
-  console.log('man5', man5.name);
-  console.log('man5', man5.mother.name);
-  console.log('man5', man5.mother.work.experience);
-  console.log('man5', man5.mother.parents[0].age);
+  // console.log('man5', man5.name);
+  // console.log('man5', man5.mother.name);
+  // console.log('man5', man5.mother.work.experience);
+  // console.log('man5', man5.mother.parents[0].age);
 
   const man5FullCopy = {
     ...man5,
@@ -142,13 +142,13 @@ function App() {
   man5FullCopy.mother.name = 'Lisa';
   man5FullCopy.mother.work.experience = 40;
   man5FullCopy.mother.parents[0].age = 180;
-  console.log('man5', man5FullCopy.name);
-  console.log('man5', man5FullCopy.mother.name);
-  console.log('man5', man5FullCopy.mother.work.experience);
-  console.log('man5', man5FullCopy.mother.parents[0].age);
+  // console.log('man5', man5FullCopy.name);
+  // console.log('man5', man5FullCopy.mother.name);
+  // console.log('man5', man5FullCopy.mother.work.experience);
+  // console.log('man5', man5FullCopy.mother.parents[0].age);
 
   // 9 Object inside an object -> array -> object ->  object
-  let man6 = {
+  const man6 = {
     name: 'John',
     age: 28,
     mother: {
@@ -176,8 +176,32 @@ function App() {
       ],
     },
   };
-
-  let man6FullCopy; //  your code
+  console.log('man6', man6.name);
+  console.log('man6', man6.mother.name);
+  console.log('man6', man6.mother.work.experience);
+  console.log('man6', man6.mother.parents[0].age);
+  console.log('man6', man6.mother.parents[0].favoriteDish.title);
+  const man6FullCopy = {
+    ...man6,
+    mother: {
+      ...man6.mother,
+      work: { ...man6.mother.work },
+      parents: man6.mother.parents.map(el => ({
+        ...el,
+        favoriteDish: { ...el.favoriteDish },
+      })),
+    },
+  };
+  man6FullCopy.name = 'Bob';
+  man6FullCopy.mother.name = 'Lisa';
+  man6FullCopy.mother.work.experience = 333;
+  man6FullCopy.mother.parents[0].age = 444;
+  man6FullCopy.mother.parents[0].favoriteDish.title = 'Pasta!';
+  console.log('man6', man6FullCopy.name);
+  console.log('man6', man6FullCopy.mother.name);
+  console.log('man6', man6FullCopy.mother.work.experience);
+  console.log('man6', man6FullCopy.mother.parents[0].age);
+  console.log('man6', man6FullCopy.mother.parents[0].favoriteDish.title);
 
   //10 Array of objects inside an object -> object -> array -> object ->  object
   let man7 = {
