@@ -70,19 +70,19 @@ function App() {
       { name: 'William', age: 28 },
     ],
   };
-  console.log('man3', man3.age);
-  console.log('man3', man3.friends[0]);
+  // console.log('man3', man3.age);
+  // console.log('man3', man3.friends[0]);
   const man3FullCopy = {
     ...man3,
     friends: man3.friends.map(el => ({ ...el })),
   };
   man3FullCopy.age = 200;
   man3FullCopy.friends[0].name = 'Fred';
-  console.log('man3FullCopy', man3FullCopy.age);
-  console.log('man3FullCopy', man3FullCopy.friends[0]);
+  // console.log('man3FullCopy', man3FullCopy.age);
+  // console.log('man3FullCopy', man3FullCopy.friends[0]);
 
   // 7 Object inside an object, inside an object
-  let man4 = {
+  const man4 = {
     name: 'John',
     age: 28,
     mother: {
@@ -94,8 +94,19 @@ function App() {
       },
     },
   };
-
-  let man4FullCopy; //  your code
+  console.log('man4', man4.name);
+  console.log('man4', man4.mother.name);
+  console.log('man4', man4.mother.work.experience);
+  const man4FullCopy = {
+    ...man4,
+    mother: { ...man4.mother, work: { ...man4.mother.work } },
+  };
+  man4FullCopy.name = 'Bob';
+  man4FullCopy.mother.name = 'Lisa';
+  man4FullCopy.mother.work.experience = 30;
+  console.log('man4FullCopy', man4FullCopy.name);
+  console.log('man4FullCopy', man4FullCopy.mother.name);
+  console.log('man4FullCopy', man4FullCopy.mother.work.experience);
 
   // 8 Array of objects inside object -> object
   let man5 = {
