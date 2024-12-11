@@ -94,9 +94,9 @@ function App() {
       },
     },
   };
-  console.log('man4', man4.name);
-  console.log('man4', man4.mother.name);
-  console.log('man4', man4.mother.work.experience);
+  // console.log('man4', man4.name);
+  // console.log('man4', man4.mother.name);
+  // console.log('man4', man4.mother.work.experience);
   const man4FullCopy = {
     ...man4,
     mother: { ...man4.mother, work: { ...man4.mother.work } },
@@ -104,12 +104,12 @@ function App() {
   man4FullCopy.name = 'Bob';
   man4FullCopy.mother.name = 'Lisa';
   man4FullCopy.mother.work.experience = 30;
-  console.log('man4FullCopy', man4FullCopy.name);
-  console.log('man4FullCopy', man4FullCopy.mother.name);
-  console.log('man4FullCopy', man4FullCopy.mother.work.experience);
+  // console.log('man4FullCopy', man4FullCopy.name);
+  // console.log('man4FullCopy', man4FullCopy.mother.name);
+  // console.log('man4FullCopy', man4FullCopy.mother.work.experience);
 
   // 8 Array of objects inside object -> object
-  let man5 = {
+  const man5 = {
     name: 'John',
     age: 28,
     mother: {
@@ -125,8 +125,28 @@ function App() {
       ],
     },
   };
+  console.log('man5', man5.name);
+  console.log('man5', man5.mother.name);
+  console.log('man5', man5.mother.work.experience);
+  console.log('man5', man5.mother.parents[0].age);
 
-  let man5FullCopy; //  your code
+  const man5FullCopy = {
+    ...man5,
+    mother: {
+      ...man5.mother,
+      work: { ...man5.mother.work },
+      parents: { ...man5.mother.parents },
+    },
+  };
+  man5FullCopy.name = 'Bob';
+  man5FullCopy.mother.name = 'Lisa';
+  man5FullCopy.mother.work.experience = 40;
+  man5FullCopy.mother.parents[0].age = 180;
+
+  console.log('man5', man5FullCopy.name);
+  console.log('man5', man5FullCopy.mother.name);
+  console.log('man5', man5FullCopy.mother.work.experience);
+  console.log('man5', man5FullCopy.mother.parents[0].age);
 
   // 9 Object inside an object -> array -> object ->  object
   let man6 = {
